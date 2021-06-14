@@ -39,5 +39,7 @@ pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 #
 # preload_app!
 
+ActiveRecord::Base.establish_connection if defined?(ActiveRecord)
+
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart
