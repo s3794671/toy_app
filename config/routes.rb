@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :accounts
   root 'static_pages#home'
   get 'customers/new'
   get 'entries/sign_in'

@@ -13,6 +13,19 @@
   <body>
   <%= render 'layouts/header' %>
     <div class="container">
+      <p class = "notice"><%= notice %></p>
+      <p class = "alert"> <%= alert %> </p>
+      <p class="navbar-text float-right">
+      <% if account_signed_in? %>
+      Logged in as <strong><%= current_account.username %></strong>.
+      <%= link_to 'Edit profile', edit_account_registration_path, :class => 'navbar-link'%> |
+      <%= link_to "Logout", destroy_account_session_path, method: :delete, :class => 'navbarlink'
+      %>
+      <% else %>
+      <%= link_to "Sign up", new_account_registration_path, :class => 'navbar-link' %> |
+      <%= link_to "Login", new_account_session_path, :class => 'navbar-link' %>
+      <% end %>
+      </p>
       <%= yield %>
       <%= render 'layouts/footer' %>
     </div>
