@@ -54,3 +54,53 @@ footer ul li {
 float: left;
 margin-left: 15px;
 }
+@import "bootstrap-sprockets";
+@import "bootstrap";
+.center {
+text-align: center;
+}
+h1 {
+margin-bottom: 20px;
+font-size: 3em;
+letter-spacing: -2px;
+margin-top: 20px;
+text-align: center;
+}
+p {
+font-size: 1.1em;
+line-height: 1.7em;
+}
+#logo {
+text-transform: uppercase;
+font-weight: bold;
+letter-spacing: -1px;
+float: left;
+margin-right: 10px;
+padding-top: 9px;
+font-size: 2.2em;
+color: #fff;
+}
+
+// more css definitions
+input, textarea, select, .uneditable-input {
+border: 1px solid #7FB8EA;
+width: 100%;
+margin-bottom: 20px;
+@include box_sizing(border_box);
+}
+input {
+height: auto !important;
+}
+#error_explanation {
+color: crimson;
+ul {
+color: crimson;
+margin: 0 0 20px 0;
+}
+}
+.field_with_errors {
+@extend .has-error;
+.form-control {
+color: $state-danger-text;
+}
+}
